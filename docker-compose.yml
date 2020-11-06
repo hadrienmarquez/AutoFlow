@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PORT=8080
+    volumes:
+      - type: bind
+        source: ./server
+        target: /usr/src/app/server
+      - type: bind
+        source: ./client
+        target: /usr/src/app/client
+    ports:
+      - "8080:8080"
+volumes:
+  nodemodules:
