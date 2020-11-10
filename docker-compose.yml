@@ -10,9 +10,6 @@ services:
       - type: bind
         source: ./server
         target: /usr/src/app/server
-      - type: bind
-        source: ./client
-        target: /usr/src/app/client
     ports:
       - "8080:8080"
 volumes:
