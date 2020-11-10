@@ -1,17 +1,18 @@
 {
   "name": "sandbox",
   "version": "1.0.0",
-  "description": "Sandbox for server application using Express.js",
+  "description": "Web scrapping for automatic download of TyFlow",
   "author": "Maman",
   "main": "server/server.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --legacy-watch --watch ./server --watch ./client"
+    "dev": "nodemon --legacy-watch --watch ./server --watch",
+    "start": "node ./server/server.js"
   },
   "dependencies": {
-    "express": "4.17.1",
-    "nodemon": "2.0.4",
     "moment": "2.29.0",
-    "uuid": "8.3.0"
+    "node-schedule": "1.3.2",
+    "inquirer": "7.3.3",
+    "puppeteer": "5.3.1"
   }
 }
