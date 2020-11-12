@@ -1,9 +1,4 @@
 {
-  "current": {
-    "version": "016094",
-    "skipped": false
-  },
-  "skipped": {
-    "version": "016093"
-  }
+  "current": { "version": "016093", "skipped": false },
+  "skipped": { "version": "016093" }
 }
