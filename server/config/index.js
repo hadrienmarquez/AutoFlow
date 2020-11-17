@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export default {
-  port: process.env.PORT,
+  email_dest: process.env.EMAIL_DEST,
   email_password: process.env.EMAIL_PASSWORD,
   email_adress: process.env.EMAIL_ADRESS,
   auth_client_id: process.env.CLIENT_ID,
