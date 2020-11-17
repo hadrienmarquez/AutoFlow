@@ -12,6 +12,9 @@ services:
       - type: bind
         source: ./server
         target: /usr/src/app/server
+      - type: bind
+        source: ${T_PATH}
+        target: /usr/src/app/stock
     ports:
       - "8080:8080"
 volumes:
