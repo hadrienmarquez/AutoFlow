@@ -1,8 +1,6 @@
 import { promises as fs } from "fs";
 
-let file_path = "/usr/src/app/server/models/versions.json";
-
-async function readCurVersion() {
+async function readData(file_path) {
   let rawData;
   try {
     rawData = await fs.readFile(file_path);
@@ -20,7 +18,7 @@ async function readCurVersion() {
   }
 }
 
-async function writeCurVersion(data) {
+async function writeData(data, file_path) {
   let rawData;
   try {
     rawData = JSON.stringify(data);
@@ -30,12 +28,11 @@ async function writeCurVersion(data) {
   }
 
   try {
-    console.log(`Updating TyFlow version in database .....`);
     await fs.writeFile(file_path, rawData);
-    console.log(`Updated`);
+    console.log(`Done.`);
   } catch (error) {
     console.log(`Couldn't update data => ${error}`);
   }
 }
 
-export { readCurVersion, writeCurVersion };
+export { readData, writeData };
