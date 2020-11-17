@@ -23,7 +23,10 @@ async function promptConfirm() {
   };
 
   let result = await new Promise((resolve) => {
-    recursiveQuestion(resolve);
+    setTimeout(() => {
+      console.clear();
+      recursiveQuestion(resolve);
+    }, 3000);
   });
 
   return result;
