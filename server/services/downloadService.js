@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 
 import { readData } from "../models/versionModelController.js";
 
-const tmpPath = "/usr/src/app/server/tmp";
+const tmpPath = `${env.workdir}/server/tmp`;
 
 async function makeTmp() {
   try {
@@ -129,7 +129,7 @@ function tyflowArchive() {
     let cache;
     //   CUDA FROM CACHE
     try {
-      cache = await readData("/usr/src/app/server/models/cache.json");
+      cache = await readData(`${env.workdir}/server/models/cache.json`);
     } catch (error) {
       console.log(`Couldn't access cache => ${error}`);
     }
@@ -160,7 +160,7 @@ function tyflowDownload() {
 
     //   VERSION FROM CACHE
     try {
-      cache = await readData("/usr/src/app/server/models/cache.json");
+      cache = await readData(`${env.workdir}/server/models/cache.json`);
     } catch (error) {
       console.log(`Couldn't access cache => ${error}`);
     }

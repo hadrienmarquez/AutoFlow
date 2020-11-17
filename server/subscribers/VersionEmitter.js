@@ -1,6 +1,7 @@
 import { EventEmitter } from "events";
 import { sendEmail } from "../services/emailService.js";
 import { writeData } from "../models/versionModelController.js";
+import env from "../config/index.js";
 
 class VersionEmitter extends EventEmitter {
   constructor() {
@@ -15,7 +16,7 @@ class VersionEmitter extends EventEmitter {
   }
 
   caching(data) {
-    let cache_path = "/usr/src/app/server/models/cache.json";
+    let cache_path = `${env.workdir}/server/models/cache.json`;
     console.log("Caching version.......");
     writeData(data, cache_path);
   }

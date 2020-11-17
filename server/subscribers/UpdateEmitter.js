@@ -20,7 +20,7 @@ class UpdateEmitter extends EventEmitter {
     let cache;
 
     try {
-      cache = await readData("/usr/src/app/server/models/cache.json");
+      cache = await readData(`${env.workdir}/server/models/cache.json`);
     } catch (error) {
       console.log(`Couldn't access cache => ${error}`);
     }

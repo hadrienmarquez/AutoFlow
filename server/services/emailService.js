@@ -47,7 +47,7 @@ function sendEmail(data) {
 
   const mailOptions = {
     from: env.email_adress,
-    to: "hadrien195@hotmail.fr",
+    to: env.email_dest,
     subject: "AutoFlow@Bot - New Version",
     html: writeMail(data),
   };
